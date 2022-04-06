@@ -102,6 +102,8 @@ defmodule Stripe.SetupIntent do
   @spec create(params, Stripe.options()) :: {:ok, t} | {:error, Stripe.Error.t()}
         when params:
                %{
+                 optional(:amount) => number(),
+                 optional(:currency) => Stripe.id(),
                  optional(:confirm) => boolean,
                  optional(:customer) => Stripe.id() | Stripe.Customer.t(),
                  optional(:description) => String.t(),
@@ -149,6 +151,8 @@ defmodule Stripe.SetupIntent do
   @spec update(Stripe.id() | t, params, Stripe.options()) :: {:ok, t} | {:error, Stripe.Error.t()}
         when params:
                %{
+                 optional(:amount) => number(),
+                 optional(:currency) => Stripe.id(),
                  optional(:customer) => Stripe.id() | Stripe.Customer.t(),
                  optional(:description) => String.t(),
                  optional(:metadata) => map,
